@@ -15,20 +15,27 @@ class TourpackagesController < ApplicationController
   end
 
   def create
-     @tourpackage = current_travelagent.tourpackages.new(params[:toupackage])
+     @tourpackage = current_travelagent.tourpackages.new(params[:tourpackage])
       if @tourpackage.save
         redirect_to root_path, :notice => "Tour offer Created!"
       else
         redirect_to new_tourpackages_path, :notice => "Tour creation failed!"
       end
   end
+   def edit
+      @tourpackage = Tourpackage.find(params[:id])
+    end
 
-  def edit
-  end
+    def update
+      if Tourpackage.find(params[:id]).update_attributes(params[:tourpackage])
+          redirect_to root_path, :notice => "tourpackage Updated!"
+        else
+          redirect_to new_tourpackages_path, :notice => "tourpackage updation failed!"
+      end
+    end
 
-  def update
+    def destroy
+      Tourpackage.find(params[:id]).delete
+      redirect_to root_path, :notice => "tourpackage Deleted"
+    end
   end
-
-  def destroy
-  end
-end

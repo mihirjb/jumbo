@@ -1,2 +1,92 @@
-<h1>Tourpackages#edit</h1>
-<p>Find me in app/views/tourpackages/edit.html.erb</p>
+<%= form_for @tourpackage do |f| -%>
+<div class="field">
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+</div>  
+
+<div class="field">
+	<%= f.label :desc, "Description" %>
+	<%= f.text_field :desc %>
+</div>
+
+<div class="field">
+	<%= f.label :price, "Total Price" %>
+	<%= f.text_field :price %>
+</div>
+
+<div class="field">
+	<%= f.label :iternary, "Detailed Iternary" %>
+	<%= f.text_area :iternary %> 
+</div>
+
+<div class="field">
+	<%= f.label :numdays, "Number of days" %>
+	<%= f.text_field :numdays %>
+</div>
+
+<div class="field">
+	<%= f.label :countries, "Countries or Cities that will be covered" %>
+	<%= f.text_field :countries %>
+</div>
+
+<div class="field">
+	<%= f.label :landmarks, "Landmark places that the trip will cover" %>
+	<%= f.text_field :landmarks %>
+</div>
+
+<div class="field">
+	<%= f.label :sourcecity, "City from where the trip will start" %>
+	<%= f.text_field :sourcecity %>
+</div>
+
+<div class="field">
+	<%= f.label :sourceaddress, "Address of the departure point" %>
+	<%= f.text_field :sourceaddress %>
+</div>
+
+<div class="field">
+	<%= f.label :maxseats, "Maximum seats" %>
+	<%= f.text_field :maxseats %>
+</div>
+
+<div class="field">
+	<%= f.label :minseats, "Minimum number of people required to keep the deal on" %>
+	<%= f.text_field :minseats %>
+</div>
+
+<div class="field">
+	<%= f.label :incairfare, "Includes Airfare?" %>
+	<%= f.radio_button :incairfare, :True %> 
+	<%= f.radio_button :incairfare, :False %> 
+</div>
+<div class="field">
+	<%= f.label :incbreakfast, "Includes breakfast?" %>
+	<%= f.radio_button :incbreakfast, :True %> 
+	<%= f.radio_button :incbreakfast, :False %> 
+</div>
+<div class="field">
+	<%= f.label :inclunch, "Includes Lunch?" %>
+	<%= f.radio_button :inclunch, :True %> 
+	<%= f.radio_button :inclunch, :False %> 
+</div>
+<div class="field">
+	<%= f.label :incsnacks, "Includes Snacks?" %>
+	<%= f.radio_button :incsnacks, :True %> 
+	<%= f.radio_button :incsnacks, :False %> 
+</div>
+<div class="field">
+	<%= f.label :incdinner, "Includes Dinner?" %>
+	<%= f.radio_button :incdinner, :True %> 
+	<%= f.radio_button :incdinner, :False %> 
+</div>
+<div class="field">
+	<%= f.label :active, "Active?" %>
+	<%= f.radio_button :active, :True %> 
+	<%= f.radio_button :active, :False %> 
+</div>
+
+
+
+
+<%= f.submit "Add", :disable_with => 'Adding...' %>
+<% end -%>
