@@ -32,5 +32,6 @@ class Tourpackage < ActiveRecord::Base
   attr_accessible :active, :arrtime, :countries, :deptime, :desc, :enddate, :incairfare, :incbreakfast, :incdinner, :inclunch, :incsnacks, :iternary, :landmarks, :maxseats, :minseats, :numdays, :price, :sourceaddress, :sourcecity, :startdate, :title
   
 belongs_to :travelagent
+
   
 end

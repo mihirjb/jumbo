@@ -1,5 +1,9 @@
 class TourpackagesController < ApplicationController
+  
+  before_filter :authenticate_travelagent!, :except => [:index,:show]
+  
   def index
+    @tourpackage = Tourpackage.all
   end
 
   def new

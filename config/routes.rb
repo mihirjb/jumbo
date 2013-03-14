@@ -1,4 +1,12 @@
 Jumbo::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/about"
+
+  get "pages/help"
+
+  get "pages/contact"
+
   get "tourpackages/index"
 
   get "tourpackages/new"
