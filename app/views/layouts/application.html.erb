@@ -18,7 +18,7 @@
 			<li></li>  
 			<li style= "float:right"><%= link_to " Signed in as #{current_travelagent.email} - Sign out", destroy_travelagent_session_path, :method => 'delete' %></li>
 			<% else %>
-			<li><%= link_to "Sign in | ", new_travelagent_session_path %><li> <li><%= link_to "Sign Up", new_travelagent_registration_path %></li>
+			<li><%= link_to "Sign in ", new_travelagent_session_path %><li> <li><%= link_to "Sign Up", new_travelagent_registration_path %></li>
 		<% end %>
 		</ul>	
 		</div>
@@ -26,10 +26,11 @@
 		</header>
 		<div class="container">
 			<% if flash[:notice] %>
-			<div class="alert alert-success alert-error">
+			<div class='alert <% if flash[:notice] =~ /Success/i %> alert-success <% else %> alert-error<% end %>'>
 			<p><%= flash[:notice] %></p>
 			</div>
 			<% end %>
+				
 				
 <%= yield %>
 </div>

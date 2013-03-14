@@ -23,9 +23,9 @@ class TourpackagesController < ApplicationController
   def create
      @tourpackage = current_travelagent.tourpackages.new(params[:tourpackage])
       if @tourpackage.save
-        redirect_to root_path, :notice => "Tour offer Created!"
+        redirect_to root_path, :notice => "Success, Tour offer Created!"
       else
-        redirect_to new_tourpackage_path, :notice => "Tour creation failed!"
+        redirect_to new_tourpackage_path, :notice => "Oops, Tour creation failed!"
       end
   end
    def edit
@@ -34,14 +34,14 @@ class TourpackagesController < ApplicationController
 
     def update
       if Tourpackage.find(params[:id]).update_attributes(params[:tourpackage])
-          redirect_to root_path, :notice => "tourpackage Updated!"
+          redirect_to root_path, :notice => "Success, Tour Package Updated!"
         else
-          redirect_to new_tourpackage_path, :notice => "tourpackage updation failed!"
+          redirect_to new_tourpackage_path, :notice => "Oops, Tour updation failed!"
       end
     end
 
     def destroy
       Tourpackage.find(params[:id]).delete
-      redirect_to root_path, :notice => "tourpackage Deleted"
+      redirect_to root_path, :notice => "Success, Tour package Deleted"
     end
   end

@@ -1,5 +1,7 @@
 
 <table class="table table-striped">
-<tr><td><%= @tours.title %></td>
-	<td><%= link_to "Edit", "/tourpackages/#{@tours.id}/edit" %></td><td><%= link_to "Destroy", "/tourpackages/#{@tours.id}/" ,:method => 'DELETE' %></td></tr>
+	<% @tours.each do |t| %>
+<tr><td><%= t.title %></td>
+	<td><%= link_to "Edit", "/tourpackages/#{t.id}/edit" %></td><td><%= link_to "Destroy", "/tourpackages/#{t.id}/" ,:method => 'DELETE' %></td></tr>
+	<% end %>
 </table>
