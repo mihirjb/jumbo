@@ -1,4 +1,6 @@
 Jumbo::Application.routes.draw do
+  
+  root :to => 'tourpackages#index'
   get "pages/home"
 
   get "pages/about"
@@ -7,33 +9,7 @@ Jumbo::Application.routes.draw do
 
   get "pages/contact"
 
-  get "tourpackages/index"
-
-  get "tourpackages/new"
-
-  get "tourpackages/show"
-
-  get "tourpackages/create"
-
-  get "tourpackages/edit"
-
-  get "tourpackages/update"
-
-  get "tourpackages/destroy"
-
-  get "tourpackage/index"
-
-  get "tourpackage/new"
-
-  get "tourpackage/show"
-
-  get "tourpackage/create"
-
-  get "tourpackage/edit"
-
-  get "tourpackage/update"
-
-  get "tourpackage/destroy"
+  resources :tourpackages
 
   devise_for :travelagents
 

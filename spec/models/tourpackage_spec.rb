@@ -12,8 +12,6 @@
 #  landmarks     :text
 #  maxseats      :integer
 #  minseats      :integer
-#  startdate     :datetime
-#  enddate       :datetime
 #  incairfare    :boolean
 #  incbreakfast  :boolean
 #  inclunch      :boolean
@@ -21,8 +19,6 @@
 #  incdinner     :boolean
 #  sourcecity    :string(255)
 #  sourceaddress :text
-#  deptime       :datetime
-#  arrtime       :datetime
 #  active        :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null

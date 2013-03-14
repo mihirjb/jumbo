@@ -1,2 +1,17 @@
-<h1>Tourpackages#show</h1>
-<p>Find me in app/views/tourpackages/show.html.erb</p>
+<h1>All the tour packages</h1>
+<%if @tourpackage.count == 0 %>
+	<p>No tour packages yet</p>
+	
+	<% else %>
+	<% if @tourpackage.count >0 %>
+	<% @tourpackage.each do |t| %>
+	<div><h1><%= t.title %></h1>
+		<p><%= t.desc %></p>
+		<p><%= t.price %></p>
+		</div>
+		<% end %>
+	<% end %>
+	
+	
+	<% end %>
+	

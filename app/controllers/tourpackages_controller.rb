@@ -7,12 +7,20 @@ class TourpackagesController < ApplicationController
   end
 
   def new
+    @tourpackage = current_travelagent.tourpackages.new(params[:tourpackage])
   end
 
   def show
+
   end
 
   def create
+     @tourpackage = current_travelagent.tourpackages.new(params[:toupackage])
+      if @tourpackage.save
+        redirect_to root_path, :notice => "Tour offer Created!"
+      else
+        redirect_to new_tourpackages_path, :notice => "Tour creation failed!"
+      end
   end
 
   def edit

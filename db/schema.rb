@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314102003) do
+ActiveRecord::Schema.define(:version => 20130314140922) do
 
   create_table "tourpackages", :force => true do |t|
     t.string   "title"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(:version => 20130314102003) do
     t.text     "landmarks"
     t.integer  "maxseats"
     t.integer  "minseats"
-    t.datetime "startdate"
-    t.datetime "enddate"
     t.boolean  "incairfare"
     t.boolean  "incbreakfast"
     t.boolean  "inclunch"
@@ -32,11 +30,10 @@ ActiveRecord::Schema.define(:version => 20130314102003) do
     t.boolean  "incdinner"
     t.string   "sourcecity"
     t.text     "sourceaddress"
-    t.datetime "deptime"
-    t.datetime "arrtime"
     t.boolean  "active"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "travelagent_id"
   end
 
   create_table "travelagents", :force => true do |t|
