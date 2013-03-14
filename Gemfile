@@ -25,6 +25,7 @@ end
 group :development do
   gem 'rspec-rails'
   gem 'sqlite3', '1.3.6'
+  gem "annotate", "~> 2.5.0"
 end
 
 group :test do
