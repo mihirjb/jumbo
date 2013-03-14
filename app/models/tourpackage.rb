@@ -29,5 +29,7 @@ class Tourpackage < ActiveRecord::Base
   
 belongs_to :travelagent
 
+validates :title, :presence => "true"
+
   
 end

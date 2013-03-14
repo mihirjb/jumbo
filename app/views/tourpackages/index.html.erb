@@ -2,13 +2,15 @@
 <%if @tourpackage.count == 0 %>
 	<p>No tour packages yet</p>
 <% else %>
+<table class="table table-striped table-bordered">
 		<% if @tourpackage.count >0 %>
 			<% @tourpackage.each do |t| %>
-				<div>
+			<tr><td>
 					<h1><%= link_to t.title, "/tourpackages/#{t.id}/show" %></h1>
 					<p><%= t.desc %></p>
-					<p><%= t.price %></p>
-				</div>
+					<p><strong>Price: </strong><%= t.price %></p>
+				</td></tr>
 			<% end %>
 		<% end %>	
 <% end %>
+</table>

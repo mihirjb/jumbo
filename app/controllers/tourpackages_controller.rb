@@ -25,7 +25,7 @@ class TourpackagesController < ApplicationController
       if @tourpackage.save
         redirect_to root_path, :notice => "Tour offer Created!"
       else
-        redirect_to new_tourpackages_path, :notice => "Tour creation failed!"
+        redirect_to new_tourpackage_path, :notice => "Tour creation failed!"
       end
   end
    def edit
@@ -36,7 +36,7 @@ class TourpackagesController < ApplicationController
       if Tourpackage.find(params[:id]).update_attributes(params[:tourpackage])
           redirect_to root_path, :notice => "tourpackage Updated!"
         else
-          redirect_to new_tourpackages_path, :notice => "tourpackage updation failed!"
+          redirect_to new_tourpackage_path, :notice => "tourpackage updation failed!"
       end
     end
 

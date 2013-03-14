@@ -1,1 +1,5 @@
-<h1><%= @tours.title %> </h1>
+
+<table class="table table-striped">
+<tr><td><%= @tours.title %></td>
+	<td><%= link_to "Edit", "/tourpackages/#{@tours.id}/edit" %></td><td><%= link_to "Destroy", "/tourpackages/#{@tours.id}/" ,:method => 'DELETE' %></td></tr>
+</table>

@@ -14,7 +14,6 @@ Jumbo::Application.routes.draw do
   get "pages/contact"
 
   resources :tourpackages
-
   devise_for :travelagents
   devise_scope :travelagent do
    match '/travelagents' => 'travelagents#index'

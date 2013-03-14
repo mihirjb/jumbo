@@ -8,20 +8,28 @@
 </head>
 <body>
 	<header>	
-		<div id="nav">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav">
 				<% if travelagent_signed_in? %>
-			<%= link_to "View all Packages", root_path %>
-			<span style="float:right">Signed in as <%= current_travelagent.email %> | <%= link_to "Sign out", destroy_travelagent_session_path, :method => 'delete' %></span>
+					<li><%= link_to "Settings", "/travelagents" %></li>
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "Create new Packages", "/tourpackages/new" %></li>
+			<li></li>  
+			<li style= "float:right"><%= link_to " Signed in as #{current_travelagent.email} - Sign out", destroy_travelagent_session_path, :method => 'delete' %></li>
 			<% else %>
-			<%= link_to "Sign in", new_travelagent_session_path %> Or <%= link_to "Sign Up", new_travelagent_registration_path %>
-		<% end %>	
+			<li><%= link_to "Sign in | ", new_travelagent_session_path %><li> <li><%= link_to "Sign Up", new_travelagent_registration_path %></li>
+		<% end %>
+		</ul>	
+		</div>
 		</div>
 		</header>
 		<div class="container">
-			<div class="success">
-				<h1 class="success">
-			<%= flash[:notice] %></h1>
+			<% if flash[:notice] %>
+			<div class="alert alert-success alert-error">
+			<p><%= flash[:notice] %></p>
 			</div>
+			<% end %>
 				
 <%= yield %>
 </div>
