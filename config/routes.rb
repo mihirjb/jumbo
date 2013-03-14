@@ -1,6 +1,10 @@
 Jumbo::Application.routes.draw do
   
   root :to => 'tourpackages#index'
+  match 'tourpackages/:id/show' => 'tourpackages#show'
+  
+ 
+  
   get "pages/home"
 
   get "pages/about"
@@ -12,6 +16,9 @@ Jumbo::Application.routes.draw do
   resources :tourpackages
 
   devise_for :travelagents
+  devise_scope :travelagent do
+   match '/travelagents' => 'travelagents#index'
+end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

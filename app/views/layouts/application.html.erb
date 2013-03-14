@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jumbo</title>
+  <title>Jumbo travel deal site</title>
   <%= stylesheet_link_tag    "application", "custom", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-	
+	<header>	
+		<div id="nav">
+				<% if travelagent_signed_in? %>
+			<%= link_to "View all Packages", root_path %>
+			<span style="float:right">Signed in as <%= current_travelagent.email %> | <%= link_to "Sign out", destroy_travelagent_session_path, :method => 'delete' %></span>
+			<% else %>
+			<%= link_to "Sign in", new_travelagent_session_path %> Or <%= link_to "Sign Up", new_travelagent_registration_path %>
+		<% end %>	
+		</div>
+		</header>
+		<div class="container">
+			<div class="success">
+				<h1 class="success">
+			<%= flash[:notice] %></h1>
+			</div>
+				
 <%= yield %>
-</div><!-- End of container div -->
+</div>
 
 </body>
 </html>

@@ -11,6 +11,12 @@ class TourpackagesController < ApplicationController
   end
 
   def show
+    
+    if Tourpackage.find(params[:id])
+      @tourpackage = Tourpackage.find(params[:id])
+    else
+      @tourpackage = ""
+    end
 
   end
 

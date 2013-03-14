@@ -1,17 +1,11 @@
-<h1>All the tour packages</h1>
-<%if @tourpackage.count == 0 %>
-	<p>No tour packages yet</p>
+<% if @tourpackage.blank? %>
+	<h1>No tour package found</h1>
 	
 	<% else %>
-	<% if @tourpackage.count >0 %>
-	<% @tourpackage.each do |t| %>
-	<div><h1><%= t.title %></h1>
-		<p><%= t.desc %></p>
-		<p><%= t.price %></p>
-		</div>
-		<% end %>
-	<% end %>
-	
+	<div><h1><%= @tourpackage.title %></h1>
+		<p><%= @tourpackage.desc %></p>
+		<p><%= @tourpackage.price %></p>
+	</div>
 	
 	<% end %>
 	
